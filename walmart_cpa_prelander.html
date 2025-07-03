@@ -1,81 +1,119 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claim Your $750 Walmart Gift Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      text-align: center;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f4f4f4, #e9f1fb);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
     .container {
-      background: white;
-      max-width: 500px;
-      margin: 50px auto;
+      background: #fff;
+      max-width: 480px;
+      width: 100%;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .container img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
     h1 {
+      font-size: 24px;
       color: #0071ce;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 15px;
     }
     .btn {
-      background: #0071ce;
-      color: white;
-      padding: 15px 25px;
+      display: inline-block;
+      background-color: #0071ce;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 8px;
       text-decoration: none;
       font-size: 18px;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 20px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #005fa3;
+    }
+    .countdown {
+      font-size: 16px;
+      color: #e53935;
+      margin-top: 15px;
+      font-weight: 600;
     }
     .comments {
       text-align: left;
       margin-top: 30px;
     }
-    .comment {
-      background: #f9f9f9;
-      padding: 10px;
-      border-left: 3px solid #0071ce;
-      margin-bottom: 10px;
-      border-radius: 5px;
+    .comments h3 {
+      margin-bottom: 12px;
+      color: #444;
     }
-    .countdown {
-      font-size: 20px;
-      color: red;
-      margin-top: 20px;
+    .comment {
+      background: #f1f8ff;
+      border-left: 4px solid #0071ce;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .comment::before {
+      content: "💬 ";
+    }
+    @media (max-width: 500px) {
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="" alt="" style="width:100%;border-radius:10px;">
-    <h1><a href="https://www.facebook.com/mou.mohanto.9" class="cta-button" target="_blank">🎁 Claim Your $750 Walmart Gift Card!</h1>
-    <p>Answer a few questions to check your eligibility.</p>
-    <div class="countdown">Offer expires in: <span id="timer">03:59</span></div>
+    <img src="https://i.imgur.com/CpLZlSm.png" alt="Walmart Gift Card">
+    <h1>🎁 Claim Your $750 Walmart Gift Card!</h1>
+    <p>Answer a few quick questions to check your eligibility below.</p>
+    <div class="countdown">⏳ Offer expires in: <span id="timer">03:59</span></div>
     <a class="btn" href="https://your-cpa-tracking-link.com" target="_blank">CLAIM NOW</a>
 
     <div class="comments">
       <h3>What others are saying:</h3>
-      <div class="comment">💬 Jenny T: “Just got mine! Took 2 minutes, no BS.”</div>
-      <div class="comment">💬 Mark R: “I thought it was fake but it's real!”</div>
-      <div class="comment">💬 Sarah P: “Thanks so much! Got my $750 instantly.”</div>
+      <div class="comment">Jenny T: “Just got mine! Took 2 minutes, no BS.”</div>
+      <div class="comment">Mark R: “I thought it was fake, but it's real!”</div>
+      <div class="comment">Sarah P: “Thanks so much! Got my $750 instantly.”</div>
     </div>
   </div>
 
   <script>
-    // Countdown timer
+    // Countdown Timer
     let time = 239;
     const timerElement = document.getElementById('timer');
     const countdown = setInterval(() => {
       const minutes = Math.floor(time / 60);
       const seconds = time % 60;
-      timerElement.textContent = \`\${String(minutes).padStart(2, '0')}:\${String(seconds).padStart(2, '0')}\`;
+      timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
       if (--time < 0) clearInterval(countdown);
     }, 1000);
   </script>
