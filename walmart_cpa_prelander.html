@@ -1,101 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Get Your $750 Walmart Gift Card</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Email Submit Offer</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f0f8ff, #dbefff);
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
       display: flex;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
+      align-items: center;
+      height: 100vh;
     }
-    .card {
-      background: #fff;
+    .offer-box {
+      background: white;
       padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-      max-width: 480px;
-      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 300px;
       text-align: center;
     }
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-    h1 {
-      font-size: 24px;
-      color: #0071ce;
-      margin-bottom: 15px;
+    button {
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
-    p {
-      font-size: 16px;
-      margin-bottom: 20px;
-      color: #555;
-    }
-    .cta-button {
-      display: inline-block;
-      background: #0071ce;
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      transition: 0.3s ease;
-    }
-    .cta-button:hover {
-      background: #005fa3;
-    }
-    .timer {
-      color: red;
-      font-weight: 600;
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-    .testimonials {
-      text-align: left;
-    }
-    .testimonials h3 {
-      margin-bottom: 10px;
-      color: #333;
-    }
-    .quote {
-      background: #f1f9ff;
-      border-left: 4px solid #0071ce;
-      padding: 12px;
-      margin-bottom: 10px;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-    .quote::before {
-      content: "💬 ";
-    }
-    @media (max-width: 500px) {
-      .cta-button {
-        width: 100%;
-      }
+    button:hover {
+      background: #218838;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="" alt="Walmart Gift Card">
-    <h1>🎉 Get a $750 Walmart Gift Card!</h1>
-    <p>Answer a few simple questions to see if you qualify.</p>
-    <div class="timer">⏳ Hurry! Offer expires in: <span id="timer">04:00</span></div>
-    <a href="" class="cta-button" target="_blank">CLAIM YOUR REWARD</a>
 
-    <div class="testimonials">
-      <h3>What others are saying:</h3>
-      <div class="quote">Jenny M: “I thought it was a scam, but I got my card in 2 minutes!”</div>
-      <div class="quote">Dave B: “Super easy. Just
+  <div class="offer-box">
+    <h2>🎁 Win a $100 Gift Card!</h2>
+    <p>Just enter your email to get started.</p>
+
+    <form id="emailForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <button type="submit">Claim Now</button>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Simulated auto-filled values
+      const autoName = "Shahriar Rahman";
+      const autoEmail = "shahriar@example.com";
+
+      // Fill in the form fields automatically
+      document.getElementById("name").value = autoName;
+      document.getElementById("email").value = autoEmail;
+
+      // Optional: prevent actual submission and show alert
+      document.getElementById("emailForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Submitted!\nName: " + autoName + "\nEmail: " + autoEmail);
+      });
+    });
+  </script>
+
+</body>
+</html>
