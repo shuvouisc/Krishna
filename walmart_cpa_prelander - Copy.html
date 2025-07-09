@@ -54,11 +54,10 @@
 </head>
 <body>
   <div class="container">
-    
     <h1>🎁 Claim Your $750 Walmart Gift Card!</h1>
     <p>Answer a few questions to check your eligibility.</p>
     <div class="countdown">Offer expires in: <span id="timer">03:59</span></div>
-    <a class="btn" href="https://your-cpa-tracking-link.com" target="_blank">CLAIM NOW</a>
+    <a class="btn" href="" target="_blank">CLAIM NOW</a>
 
     <div class="comments">
       <h3>What others are saying:</h3>
@@ -79,5 +78,28 @@
       if (--time < 0) clearInterval(countdown);
     }, 1000);
   </script>
+  <p>Offer expires in: <span id="timer">05:00</span></p>
+
+<script>
+  let timeLeft = 300; // 5 minutes = 300 seconds
+
+  const timerDisplay = document.getElementById("timer");
+
+  const countdown = setInterval(() => {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+
+    timerDisplay.textContent = 
+      `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    timeLeft--;
+
+    if (timeLeft < 0) {
+      clearInterval(countdown);
+      timerDisplay.textContent = "00:00";
+    }
+  }, 1000);
+</script>
+
 </body>
 </html>
